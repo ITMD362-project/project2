@@ -58,8 +58,6 @@ document.addEventListener('DOMContentLoaded', function() {
         submitBtn.disabled = true;
 
         try {
-          // In a real implementation, you would use fetch() here
-          // await submitFormData(new FormData(this));
           
           // Simulate network delay
           await new Promise(resolve => setTimeout(resolve, 1500));
