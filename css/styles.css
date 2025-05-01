@@ -4,11 +4,14 @@
   padding: 0;
 }
 
+html,
 body {
   font-family: "Georgia", serif;
   color: #111;
   background: white;
   line-height: 1.6;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .publications-intro,
@@ -461,6 +464,36 @@ body {
 
   .logoimage {
     display: block;
+  }
+
+  .pub-section {
+    flex-direction: row;
+    text-align: left;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .pub-section.reverse {
+    flex-direction: row-reverse;
+  }
+
+  .pub-section img {
+    max-width: 400px;
+    margin-bottom: 0;
+  }
+
+  .pub-text {
+    padding: 1rem;
+    font-size: 20px;
+  }
+
+  .pub-text h2 {
+    font-size: 36px;
+  }
+
+  .pub-text h1 {
+    font-size: 28px;
   }
 }
 
