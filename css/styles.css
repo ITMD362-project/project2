@@ -97,6 +97,7 @@ body {
   font-weight: bold;
   color: #00356b;
   text-decoration-line: none;
+  border: none !important;
 }
 
 .logoimage img {
