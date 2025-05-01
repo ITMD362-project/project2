@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
       navToggle.innerHTML = isExpanded
         ? '<i class="fas fa-bars"></i>'
         : '<i class="fas fa-times"></i>';
-      document.body.style.overflow = isExpanded ? "" : "hidden";
+      navLinks.classList.toggle("nav-overlay");
 
       if (isExpanded) {
         document.querySelectorAll(".dropdown").forEach((dropdown) => {

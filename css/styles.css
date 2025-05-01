@@ -82,11 +82,12 @@ body {
   position: sticky;
   top: 0;
   width: 100%;
+  height: 70px;
   background: white;
-  padding: 1rem 2rem;
+  padding: 0 1.5rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   z-index: 1000;
 }
@@ -98,13 +99,17 @@ body {
 }
 
 .logoimage img {
-  height: 50px;
+  height: 45px;
+  object-fit: contain;
+  vertical-align: middle;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
   gap: 2rem;
+  align-items: center;
+  margin-top: 0px !important;
 }
 
 .nav-links a {
@@ -112,6 +117,8 @@ body {
   color: #00356b;
   font-weight: 500;
   font-size: 20px;
+  align-items: center;
+  height: 100%;
 }
 
 .nav-links a.onpage {
@@ -396,6 +403,7 @@ body {
   color: #00356b;
   font-size: 24px;
   cursor: pointer;
+  top: 50%;
 }
 
 /* Yale Campus Image Styling */
@@ -425,21 +433,36 @@ body {
   box-shadow: 0 8px 20px rgba(0, 53, 107, 0.3);
 }
 
-/* Responsive Adjustments (Mobile-First using min-width) */
-
-/* Base styles apply to mobile (smallest viewports) */
-
+/* Base nav-links: hidden by default unless overlay is active */
 .nav-links {
   display: none;
-  width: 100%;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 1rem;
-  padding: 1rem 0;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
 }
 
-.nav-links.active {
+.nav-links.nav-overlay {
   display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 998;
+}
+
+/* Nav link styles */
+.nav-links a {
+  text-decoration: none;
+  color: #00356b;
+  font-weight: 500;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .mobile-nav-toggle {
@@ -459,7 +482,8 @@ body {
   display: none;
 }
 
-.pub-section {
+.pub-section,
+.pub-section.reverse {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -542,5 +566,27 @@ body {
 
   .pub-text h1 {
     font-size: 28px;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+  }
+
+  .nav-links.nav-overlay {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    height: auto;
+    background: none;
   }
 }
